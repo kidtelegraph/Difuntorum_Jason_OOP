@@ -6,12 +6,13 @@
     <title>Stayed Resilient Music Gallery</title>
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script defer src="js/main.js" type="module"></script>
-    
+    <script type="module" src="./js/modules/photo_gallery.js"></script>
+    <script type="module" src="./js/modules/player.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </head>
 <body>
     <!-- Header -->
-     <header class="header full-width-grid-con">
+    <header class="header full-width-grid-con">
         <div class="logo">
             <img src="images/tg_logo.png" alt="Logo">
         </div>
@@ -24,26 +25,34 @@
     </header>
     <!-- Main Content -->
     <div class="full-width-grid-con">
-        <div class="grid-con" id="background">
+        <div class="gallery-container">
             <!-- Photo Gallery -->
-             <div class="full-width-grid-con">
-                <div class="gallery">
-                    <div class="photo" id="photo1"></div>
-                    <div class="photo" id="photo2"></div>
-                    <!-- Add more photos as needed -->
+            <div class="gallery">
+                <button class="prev-btn">&lt;</button>
+                <div class="image-container">
+                    <img src="images/tg_logo.png" alt="Image 1">
+                    <img src="images/bg_image.jpg" alt="Image 2">
+                    <img src="images/tg_logo.png" alt="Image 3">
+                    <img src="images/bg_image.jpg" alt="Image 4">
+                    <img src="images/tg_logo.png" alt="Image 5">
+                    <img src="images/bg_image.jpg" alt="Image 6">
+                    <audio class="audio-player" src="music/soss_try.wav"></audio>
                 </div>
-            </div> 
-            <!-- Music Player -->
-            <section class="full-width-grid-con">
-                <div class="music-player">
-                    <div class="controls">
-                        <button class="play-pause"></button>
-                        <div class="progress-bar">
-                          <div class="progress"></div>
-                    </div>                  
-                </div>
-            </section>
+                <button class="next-btn">&gt;</button>
+            </div>
         </div>
+        <!-- Music Player -->
+        <section class="col-span-full">
+            <h2 class="hidden">Music Player</h2>
+            <div class="music-player">
+                <div class="controls">
+                    <button class="play-pause"></button>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>

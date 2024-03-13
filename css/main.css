@@ -61,6 +61,7 @@ p {
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
+  height: 200px;
 }
 
 .logo {
@@ -99,19 +100,61 @@ p {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
 }
 
-.photo {
-  background-color: #ccc;
-  height: 200px;
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.music-player {
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  position: relative;
+}
+
+/* Styles for images */
+.image-container {
+  height: fit-content;
+}
+
+.image-container img {
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Styles for audio player */
+.audio-player {
+  display: none;
+}
+
+.music-player-container {
   background: linear-gradient(to bottom right, #ff7f7f, #7fbfff);
   border-radius: 20px;
+  height: 100px;
+  width: 1000px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
