@@ -1,6 +1,5 @@
 # Difuntorum_Jason_OOP
-
-# OOP JS, MODULES AND BUNDLING
+OOP JS, MODULES AND BUNDLING
 
 # Music and Photo Gallery by The Groove
 
