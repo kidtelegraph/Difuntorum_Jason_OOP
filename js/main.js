@@ -5,7 +5,8 @@ import { AudioPlayer } from './modules/player.js';
 const gallery = new Gallery();
 
 // Initialize audio player
-const player = new AudioPlayer();
+const audioPlayer = new AudioPlayer();
+audioPlayer.init();
 
 // Event listeners
 document.querySelector('.prev-btn').addEventListener('click', () => {
