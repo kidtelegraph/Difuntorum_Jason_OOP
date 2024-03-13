@@ -98,26 +98,27 @@ p {
   text-decoration: none;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
 }
 
-.image-container {
+.gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.image-container img {
-  width: 100%;
+.gallery img {
+  width: 200px;
   height: auto;
-  max-width: 100%;
+  margin: 10px;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .prev-btn, .next-btn {
-  position: absolute;
   top: 50%;
   background-color: transparent;
   border: none;

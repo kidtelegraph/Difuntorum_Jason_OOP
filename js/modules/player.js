@@ -1,7 +1,9 @@
+// Define AudioPlayer class
 export class AudioPlayer {
-    constructor(gallery) {
-        this.gallery = gallery;
+    constructor() {
         this.audioPlayer = document.querySelector('.audio-player');
+        this.playPauseBtn = document.querySelector('.play-pause');
+        this.progressBar = document.querySelector('.progress');
     }
 
     play() {
@@ -12,26 +14,29 @@ export class AudioPlayer {
         this.audioPlayer.pause();
     }
 
-    // Add event listeners within the constructor or a separate method
-    addEventListeners() {
-        // Check if the elements exist before adding event listeners
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener('click', () => {
-                gallery.prevImage();
-            });
-            nextBtn.addEventListener('click', () => {
-                gallery.nextImage();
-            });
-        } else {
-            console.error("Elements with class 'prev-btn' or 'next-btn' not found.");
-        }
+    // Add event listeners for play/pause button
+    addPlayPauseListener() {
+        this.playPauseBtn.addEventListener('click', () => {
+            if (this.audioPlayer.paused) {
+                this.play();
+            } else {
+                this.pause();
+            }
+        });
+    }
+
+    // Update progress bar based on audio playback
+    updateProgressBar() {
+        const progress = (this.audioPlayer.currentTime / this.audioPlayer.duration) * 100;
+        this.progressBar.style.width = `${progress}%`;
+    }
+
+    // Initialize audio player with event listeners
+    init() {
+        this.addPlayPauseListener();
+        // Update progress bar as audio plays
+        this.audioPlayer.addEventListener('timeupdate', () => {
+            this.updateProgressBar();
+        });
     }
 }
-
-// Initialize audio player
-const audioPlayer = new AudioPlayer();
-
-// Call the method to add event listeners
-audioPlayer.addEventListeners();
