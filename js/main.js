@@ -1,15 +1,26 @@
-import { PhotoGallery } from './modules/photo-gallery.js';
-import { MusicPlayer } from './modules/player.js';
+import { Gallery } from './modules/photo_gallery.js';
+import { AudioPlayer } from './modules/player.js';
 
-const gallery = new PhotoGallery();
+// Initialize gallery
+const gallery = new Gallery();
 
-// Add photos to the gallery
-gallery.addPhoto('photo1.jpg', 'audio1.mp3');
-gallery.addPhoto('photo2.jpg', 'audio2.mp3');
+// Initialize audio player
+const player = new AudioPlayer();
 
-// Instantiate the music player
-const player = new MusicPlayer();
+// Event listeners
+document.querySelector('.prev-btn').addEventListener('click', () => {
+    gallery.prevImage();
+});
 
-// Example usage
-player.loadAudio('audio1.mp3');
-player.play();
+document.querySelector('.next-btn').addEventListener('click', () => {
+    gallery.nextImage();
+});
+
+// Example usage of audio player controls
+document.querySelector('.play-btn').addEventListener('click', () => {
+    player.play();
+});
+
+document.querySelector('.pause-btn').addEventListener('click', () => {
+    player.pause();
+});
